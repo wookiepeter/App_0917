@@ -48,6 +48,7 @@ public class TowerManager : MonoBehaviour {
 
             GameObject newInfo = Instantiate(prefabs[curValue - 1]);
             newTower.GetComponent<TowerController>().InitializeTowerInformation(newInfo);
+            newInfo.GetComponent<TowerInformation>().faction = faction;
 
             newTower.transform.parent = this.gameObject.transform;
             newInfo.transform.parent = newTower.transform;

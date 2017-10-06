@@ -7,17 +7,19 @@ public class TowerController : MonoBehaviour {
     public GameObject infoObject;
 
     public TowerInformation info;
+    public Animator animator;
 
     bool isAttcking;
 
 	// Use this for initialization
 	void Start () {
-		
+        animator = gameObject.GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(info.ProductionUpdate());
+        animator.SetInteger("TowerOwner", (int)info.faction);
+        if(info.ProductionUpdate())
         {
             
         }
